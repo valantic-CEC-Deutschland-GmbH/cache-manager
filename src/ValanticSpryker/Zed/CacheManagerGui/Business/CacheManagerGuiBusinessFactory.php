@@ -4,11 +4,11 @@ declare(strict_types = 1);
 
 namespace ValanticSpryker\Zed\CacheManagerGui\Business;
 
+use Spryker\Client\Storage\StorageClientInterface;
+use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
 use ValanticSpryker\Zed\CacheManagerGui\Business\Model\CacheManager;
 use ValanticSpryker\Zed\CacheManagerGui\CacheManagerGuiDependencyProvider;
 use ValanticSpryker\Zed\CacheManagerGui\Communication\Plugin\CacheManagerPluginCollection;
-use Spryker\Client\Storage\StorageClientInterface;
-use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
 
 class CacheManagerGuiBusinessFactory extends AbstractBusinessFactory
 {

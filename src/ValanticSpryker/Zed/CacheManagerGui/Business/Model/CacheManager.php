@@ -2,18 +2,18 @@
 
 declare(strict_types = 1);
 
-namespace Pyz\Zed\CacheManagerGui\Business\Model;
+namespace ValanticSpryker\Zed\CacheManagerGui\Business\Model;
 
 use Generated\Shared\Transfer\CacheManagerDeleteTransfer;
 use Generated\Shared\Transfer\CacheManagerPluginTransfer;
-use Pyz\Zed\CacheManagerGui\Communication\Plugin\CacheManagerPluginCollection;
 use Spryker\Client\Storage\Redis\Service;
 use Spryker\Client\Storage\StorageClientInterface;
+use ValanticSpryker\Zed\CacheManagerGui\Communication\Plugin\CacheManagerPluginCollection;
 
 class CacheManager
 {
     /**
-     * @param \Pyz\Zed\CacheManagerGui\Communication\Plugin\CacheManagerPluginCollection $cacheManagerPluginCollection
+     * @param \ValanticSpryker\Zed\CacheManagerGui\Communication\Plugin\CacheManagerPluginCollection $cacheManagerPluginCollection
      * @param \Spryker\Client\Storage\StorageClientInterface $storageClient
      */
     public function __construct(private CacheManagerPluginCollection $cacheManagerPluginCollection, private StorageClientInterface $storageClient)
