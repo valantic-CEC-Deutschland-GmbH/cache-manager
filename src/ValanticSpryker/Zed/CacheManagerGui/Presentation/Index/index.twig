@@ -11,6 +11,7 @@
                     <div class="col-md-12">
                         <dl class="row">Description: {{ plugin.description }}</dl>
                         <dl class="row">Key Pattern: {{ plugin.keyPattern }}</dl>
+                        <dl class="row">Total Entites: {{ plugin.totalAmount }}</dl>
                         {{ createActionButton('/cache-manager-gui/index/delete?name=' ~ plugin.name, 'Delete' | trans) }}
                     </div>
                 </div>

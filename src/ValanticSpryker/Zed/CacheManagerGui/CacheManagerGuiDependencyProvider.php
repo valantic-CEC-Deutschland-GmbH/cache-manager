@@ -8,9 +8,6 @@ use Spryker\Client\Storage\StorageClientInterface;
 use Spryker\Zed\Kernel\AbstractBundleDependencyProvider;
 use Spryker\Zed\Kernel\Container;
 
-/**
- * @method \ValanticSpryker\Zed\CacheManagerGui\CacheManagerGuiConfig getConfig()
- */
 class CacheManagerGuiDependencyProvider extends AbstractBundleDependencyProvider
 {
     public const CACHE_MANAGER_PLUGINS = 'CACHE_MANAGER_PLUGINS';

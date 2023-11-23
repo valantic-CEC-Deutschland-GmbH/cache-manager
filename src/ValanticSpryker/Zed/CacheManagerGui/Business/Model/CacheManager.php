@@ -27,10 +27,12 @@ class CacheManager
     {
         $transfers = [];
         foreach ($this->cacheManagerPluginCollection->getAll() as $plugin) {
+            $keyPattern = $plugin->getKeyPattern();
             $transfers[] = (new CacheManagerPluginTransfer())
                 ->setName($plugin->getName())
                 ->setDescription($plugin->getDescription())
-                ->setKeyPattern($plugin->getKeyPattern());
+                ->setKeyPattern($keyPattern)
+                ->setTotalAmount(count($this->getKeys($keyPattern)));
         }
 
         return $transfers;
@@ -49,7 +51,7 @@ class CacheManager
         if ($this->cacheManagerPluginCollection->has($name)) {
             $plugin = $this->cacheManagerPluginCollection->get($name);
 
-            $keys = $this->storageClient->getKeys($plugin->getKeyPattern());
+            $keys = $this->getKeys($plugin->getKeyPattern());
             $formattedKeys = $this->getFormattedKeys($keys);
 
             $this->storageClient->deleteMulti($formattedKeys);
@@ -72,5 +74,15 @@ class CacheManager
         return array_map(function (string $key) {
             return ltrim($key, Service::KV_PREFIX);
         }, $keys);
+    }
+
+    /**
+     * @param string $keyPattern
+     *
+     * @return array
+     */
+    private function getKeys(string $keyPattern): array
+    {
+        return $this->storageClient->getKeys($keyPattern);
     }
 }
