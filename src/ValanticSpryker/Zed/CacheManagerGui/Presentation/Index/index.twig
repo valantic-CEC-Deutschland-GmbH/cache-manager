@@ -1,0 +1,21 @@
+{% extends '@Gui/Layout/layout.twig' %}
+
+{% block content %}
+    {% for plugin in pluginData %}
+        {% embed '@Gui/Partials/widget.twig' %}
+            {% block widget_title -%}
+                <h5>{{ plugin.name | default('') }}</h5>
+            {%- endblock %}
+            {% block widget_content %}
+                <div class="row">
+                    <div class="col-md-12">
+                        <dl class="row">
+                            {{ plugin.description }}
+                        </dl>
+                        {{ createActionButton('/cache-manager-gui/index/delete?name=' ~ plugin.name, 'Delete' | trans) }}
+                    </div>
+                </div>
+            {% endblock %}
+        {% endembed %}
+    {% endfor %}
+{% endblock %}

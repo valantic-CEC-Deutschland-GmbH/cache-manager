@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config>
+    <maintenance>
+        <pages>
+            <cache-manager-gui>
+                <label>Cache Manager</label>
+                <title>Cache Manager</title>
+                <bundle>cache-manager-gui</bundle>
+                <controller>index</controller>
+                <action>index</action>
+            </cache-manager-gui>
+        </pages>
+    </maintenance>
+</config>
+
+
