@@ -9,9 +9,18 @@
             {% block widget_content %}
                 <div class="row">
                     <div class="col-md-12">
-                        <dl class="row">Description: {{ plugin.description }}</dl>
-                        <dl class="row">Key Pattern: {{ plugin.keyPattern }}</dl>
-                        <dl class="row">Total Entites: {{ plugin.totalAmount }}</dl>
+                        <dl class="row col-md-12">
+                            <h4>Description:</h4>
+                            <p>{{ plugin.description }}</p>
+                        </dl>
+                        <dl class="row col-md-12">
+                            <h4>Key Pattern:</h4>
+                            <p>{{ plugin.keyPattern }}</p>
+                        </dl>
+                        <dl class="row col-md-12">
+                            <h4>Total Entites:</h4>
+                            <p>{{ plugin.totalAmount }}</p>
+                        </dl>
                         {{ createActionButton('/cache-manager-gui/index/delete?name=' ~ plugin.name, 'Delete' | trans) }}
                     </div>
                 </div>
