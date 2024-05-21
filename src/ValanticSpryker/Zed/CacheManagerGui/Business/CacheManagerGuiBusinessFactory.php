@@ -13,7 +13,7 @@ class CacheManagerGuiBusinessFactory extends AbstractBusinessFactory
     /**
      * @return \ValanticSpryker\Zed\CacheManager\Business\CacheManagerFacadeInterface
      */
-    private function getCacheManagerFacade(): CacheManagerFacadeInterface
+    public function getCacheManagerFacade(): CacheManagerFacadeInterface
     {
         return $this->getProvidedDependency(CacheManagerGuiDependencyProvider::FACADE_CACHE_MANAGER);
     }

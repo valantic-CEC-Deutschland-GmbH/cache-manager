@@ -8,7 +8,7 @@ use Generated\Shared\Transfer\CacheManagerDeleteTransfer;
 use Spryker\Zed\Kernel\Business\AbstractFacade;
 
 /**
- * @method \ValanticSpryker\Zed\CacheManagerGui\Business\CacheManagerBusinessFactory getFactory()
+ * @method \ValanticSpryker\Zed\CacheManagerGui\Business\CacheManagerGuiBusinessFactory getFactory()
  */
 class CacheManagerGuiFacade extends AbstractFacade implements CacheManagerGuiFacadeInterface
 {
