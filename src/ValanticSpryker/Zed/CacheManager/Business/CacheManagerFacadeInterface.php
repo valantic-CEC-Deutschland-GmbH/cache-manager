@@ -4,6 +4,8 @@ declare(strict_types = 1);
 
 namespace ValanticSpryker\Zed\CacheManager\Business;
 
+use Generated\Shared\Transfer\CacheManagerDeleteTransfer;
+
 interface CacheManagerFacadeInterface
 {
     /**

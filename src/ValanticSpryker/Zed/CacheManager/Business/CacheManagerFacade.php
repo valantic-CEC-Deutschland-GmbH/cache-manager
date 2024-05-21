@@ -4,6 +4,9 @@ declare(strict_types = 1);
 
 namespace ValanticSpryker\Zed\CacheManager\Business;
 
+use Generated\Shared\Transfer\CacheManagerDeleteTransfer;
+use Spryker\Zed\Kernel\Business\AbstractFacade;
+
 /**
  * @method \ValanticSpryker\Zed\CacheManager\Business\CacheManagerBusinessFactory getFactory()
  */
