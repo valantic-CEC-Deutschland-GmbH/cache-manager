@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace ValanticSpryker\Zed\CacheManagerGui\Communication\Plugin;
+namespace ValanticSpryker\Zed\CacheManager\Communication\Plugin;
 
 interface CacheManagerPluginInterface
 {

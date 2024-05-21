@@ -7,7 +7,7 @@ namespace ValanticSpryker\Zed\CacheManagerGui\Business;
 use Generated\Shared\Transfer\CacheManagerDeleteTransfer;
 
 /**
- * @method \ValanticSpryker\Zed\CacheManagerGui\Business\CacheManagerGuiBusinessFactory getFactory()
+ * @method \ValanticSpryker\Zed\CacheManager\Business\CacheManagerBusinessFactory getFactory()
  */
 interface CacheManagerGuiFacadeInterface
 {

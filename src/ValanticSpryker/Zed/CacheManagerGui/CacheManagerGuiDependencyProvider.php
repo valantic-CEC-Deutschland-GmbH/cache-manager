@@ -10,8 +10,7 @@ use Spryker\Zed\Kernel\Container;
 
 class CacheManagerGuiDependencyProvider extends AbstractBundleDependencyProvider
 {
-    public const CACHE_MANAGER_PLUGINS = 'CACHE_MANAGER_PLUGINS';
-    public const CLIENT_STORAGE = 'CLIENT_STORAGE';
+    public const FACADE_CACHE_MANAGER = 'FACADE_CACHE_MANAGER';
 
     /**
      * @param \Spryker\Zed\Kernel\Container $container
@@ -22,8 +21,7 @@ class CacheManagerGuiDependencyProvider extends AbstractBundleDependencyProvider
     {
         $container = parent::provideBusinessLayerDependencies($container);
 
-        $this->addCacheManagerPlugins($container);
-        $this->addStorageClient($container);
+        $this->addCacheManagerFacade($container);
 
         return $container;
     }
@@ -33,31 +31,10 @@ class CacheManagerGuiDependencyProvider extends AbstractBundleDependencyProvider
      *
      * @return void
      */
-    protected function addCacheManagerPlugins(Container $container): void
+    private function addCacheManagerFacade(Container $container): void
     {
-        $container->set(self::CACHE_MANAGER_PLUGINS, function () {
-            return $this->getCacheManagerPlugins();
+        $container->set(static::FACADE_CACHE_MANAGER, function (Container $container) {
+            return $container->getLocator()->cacheManager()->facade();
         });
-    }
-
-    /**
-     * @return array<\ValanticSpryker\Zed\CacheManagerGui\Communication\Plugin\CacheManagerPluginInterface>
-     */
-    protected function getCacheManagerPlugins(): array
-    {
-        return [];
-    }
-
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return void
-     */
-    protected function addStorageClient(Container $container): void
-    {
-        $container->set(
-            self::CLIENT_STORAGE,
-            fn (): StorageClientInterface => $container->getLocator()->storage()->client()
-        );
     }
 }

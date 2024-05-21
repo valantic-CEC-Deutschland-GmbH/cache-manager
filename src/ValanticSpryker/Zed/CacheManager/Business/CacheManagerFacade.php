@@ -2,23 +2,21 @@
 
 declare(strict_types = 1);
 
-namespace ValanticSpryker\Zed\CacheManagerGui\Business;
+namespace ValanticSpryker\Zed\CacheManager\Business;
 
-use Generated\Shared\Transfer\CacheManagerDeleteTransfer;
-use Spryker\Zed\Kernel\Business\AbstractFacade;
-use ValanticSpryker\Zed\CacheManagerGui\CacheManagerGuiDependencyProvider;
+use ValanticSpryker\Zed\CacheManager\Business\CacheManagerFacadeInterface;
 
 /**
  * @method \ValanticSpryker\Zed\CacheManager\Business\CacheManagerBusinessFactory getFactory()
  */
-class CacheManagerGuiFacade extends AbstractFacade implements CacheManagerGuiFacadeInterface
+class CacheManagerFacade extends AbstractFacade implements CacheManagerFacadeInterface
 {
     /**
      * @return array<\Generated\Shared\Transfer\CacheManagerPluginTransfer>
      */
     public function getCacheManagerPluginsData(): array
     {
-        return $this->getFactory()->getCacheManagerFacade()->getCacheManagerPluginsData();
+        return $this->getFactory()->createCacheManager()->getPlugins();
     }
 
     /**
@@ -28,6 +26,6 @@ class CacheManagerGuiFacade extends AbstractFacade implements CacheManagerGuiFac
      */
     public function deleteCache(CacheManagerDeleteTransfer $cacheManagerDeleteTransfer): CacheManagerDeleteTransfer
     {
-        return $this->getFactory()->getCacheManagerFacade()->deleteCache($cacheManagerDeleteTransfer);
+        return $this->getFactory()->createCacheManager()->deleteCache($cacheManagerDeleteTransfer);
     }
 }
