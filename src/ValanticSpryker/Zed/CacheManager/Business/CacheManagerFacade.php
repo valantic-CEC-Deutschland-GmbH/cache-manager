@@ -4,8 +4,6 @@ declare(strict_types = 1);
 
 namespace ValanticSpryker\Zed\CacheManager\Business;
 
-use ValanticSpryker\Zed\CacheManager\Business\CacheManagerFacadeInterface;
-
 /**
  * @method \ValanticSpryker\Zed\CacheManager\Business\CacheManagerBusinessFactory getFactory()
  */
