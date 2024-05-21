@@ -57,7 +57,7 @@ class CacheManagerDependencyProvider extends AbstractBundleDependencyProvider
     {
         $container->set(
             self::CLIENT_STORAGE,
-            fn (): StorageClientInterface => $container->getLocator()->storage()->client()
+            fn (): StorageClientInterface => $container->getLocator()->storage()->client(),
         );
     }
 }
