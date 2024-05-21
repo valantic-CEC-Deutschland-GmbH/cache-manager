@@ -4,7 +4,6 @@ declare(strict_types = 1);
 
 namespace ValanticSpryker\Zed\CacheManagerGui;
 
-use Spryker\Client\Storage\StorageClientInterface;
 use Spryker\Zed\Kernel\AbstractBundleDependencyProvider;
 use Spryker\Zed\Kernel\Container;
 

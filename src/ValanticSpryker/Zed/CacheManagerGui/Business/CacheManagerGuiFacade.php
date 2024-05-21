@@ -6,7 +6,6 @@ namespace ValanticSpryker\Zed\CacheManagerGui\Business;
 
 use Generated\Shared\Transfer\CacheManagerDeleteTransfer;
 use Spryker\Zed\Kernel\Business\AbstractFacade;
-use ValanticSpryker\Zed\CacheManagerGui\CacheManagerGuiDependencyProvider;
 
 /**
  * @method \ValanticSpryker\Zed\CacheManager\Business\CacheManagerBusinessFactory getFactory()
