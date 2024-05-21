@@ -5,5 +5,5 @@
 # Description
 Adds functionality to register new cache manager plugins to delete redis cache via backoffice gui
 
-# Install2
+# Install
 - `composer require valantic-spryker/cache-manager`
