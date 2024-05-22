@@ -33,7 +33,7 @@ class CacheManagerGuiDependencyProvider extends AbstractBundleDependencyProvider
     private function addCacheManagerFacade(Container $container): void
     {
         $container->set(static::FACADE_CACHE_MANAGER, function (Container $container) {
-            return $container->getLocator()->cacheManager()->facade();
+            return $container->getLocator()->cacheManager()->facade(); // @phpstan-ignore method.undefined
         });
     }
 }
