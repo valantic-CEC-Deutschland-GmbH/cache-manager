@@ -16,7 +16,7 @@ class CacheManager
      * @param \ValanticSpryker\Zed\CacheManager\Communication\Plugin\CacheManagerPluginCollection $cacheManagerPluginCollection
      * @param \Spryker\Client\Storage\StorageClientInterface $storageClient
      */
-    public function __construct(private CacheManagerPluginCollection $cacheManagerPluginCollection, private StorageClientInterface $storageClient)
+    public function __construct(protected CacheManagerPluginCollection $cacheManagerPluginCollection, protected StorageClientInterface $storageClient)
     {
     }
 
@@ -69,7 +69,7 @@ class CacheManager
      *
      * @return array
      */
-    private function getFormattedKeys(array $keys): array
+    protected function getFormattedKeys(array $keys): array
     {
         return array_map(function (string $key) {
             return ltrim($key, Service::KV_PREFIX);
@@ -81,7 +81,7 @@ class CacheManager
      *
      * @return array
      */
-    private function getKeys(string $keyPattern): array
+    protected function getKeys(string $keyPattern): array
     {
         return $this->storageClient->getKeys($keyPattern);
     }
