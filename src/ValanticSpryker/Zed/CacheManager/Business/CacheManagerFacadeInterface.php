@@ -2,14 +2,11 @@
 
 declare(strict_types = 1);
 
-namespace ValanticSpryker\Zed\CacheManagerGui\Business;
+namespace ValanticSpryker\Zed\CacheManager\Business;
 
 use Generated\Shared\Transfer\CacheManagerDeleteTransfer;
 
-/**
- * @method \ValanticSpryker\Zed\CacheManager\Business\CacheManagerBusinessFactory getFactory()
- */
-interface CacheManagerGuiFacadeInterface
+interface CacheManagerFacadeInterface
 {
     /**
      * @return array<\Generated\Shared\Transfer\CacheManagerPluginTransfer>

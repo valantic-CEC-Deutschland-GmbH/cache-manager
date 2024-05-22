@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace ValanticSpryker\Zed\CacheManagerGui\Communication\Plugin;
+namespace ValanticSpryker\Zed\CacheManager\Communication\Plugin;
 
 use InvalidArgumentException;
 
@@ -11,7 +11,7 @@ class CacheManagerPluginCollection
     private array $plugins = [];
 
     /**
-     * @param array<\ValanticSpryker\Zed\CacheManagerGui\Communication\Plugin\CacheManagerPluginInterface> $plugins
+     * @param array<\ValanticSpryker\Zed\CacheManager\Communication\Plugin\CacheManagerPluginInterface> $plugins
      */
     public function __construct(array $plugins)
     {
@@ -21,7 +21,7 @@ class CacheManagerPluginCollection
     }
 
     /**
-     * @param \ValanticSpryker\Zed\CacheManagerGui\Communication\Plugin\CacheManagerPluginInterface $plugin
+     * @param \ValanticSpryker\Zed\CacheManager\Communication\Plugin\CacheManagerPluginInterface $plugin
      *
      * @return void
      */
@@ -35,7 +35,7 @@ class CacheManagerPluginCollection
      *
      * @throws \InvalidArgumentException
      *
-     * @return \ValanticSpryker\Zed\CacheManagerGui\Communication\Plugin\CacheManagerPluginInterface
+     * @return \ValanticSpryker\Zed\CacheManager\Communication\Plugin\CacheManagerPluginInterface
      */
     public function get(string $name): CacheManagerPluginInterface
     {
@@ -57,7 +57,7 @@ class CacheManagerPluginCollection
     }
 
     /**
-     * @return array<\ValanticSpryker\Zed\CacheManagerGui\Communication\Plugin\CacheManagerPluginInterface>
+     * @return array<\ValanticSpryker\Zed\CacheManager\Communication\Plugin\CacheManagerPluginInterface>
      */
     public function getAll(): array
     {
