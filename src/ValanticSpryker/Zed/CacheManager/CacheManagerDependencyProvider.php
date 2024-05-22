@@ -57,7 +57,7 @@ class CacheManagerDependencyProvider extends AbstractBundleDependencyProvider
     {
         $container->set(
             self::CLIENT_STORAGE,
-            fn (): StorageClientInterface => $container->getLocator()->storage()->client(), // @phpstan-ignore method.undefined
+            fn (): StorageClientInterface => $container->getLocator()->storage()->client(), // @phpstan-ignore method.notFound
         );
     }
 }
