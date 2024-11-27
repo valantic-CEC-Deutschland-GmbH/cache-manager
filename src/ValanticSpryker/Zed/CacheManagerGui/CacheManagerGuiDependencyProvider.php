@@ -60,4 +60,17 @@ class CacheManagerGuiDependencyProvider extends AbstractBundleDependencyProvider
             fn (): StorageClientInterface => $container->getLocator()->storage()->client()
         );
     }
+
+    /**
+     * @param \Spryker\Zed\Kernel\Container $container
+     *
+     * @return void
+     */
+    protected function addCacheManagerFacade(Container $container): void
+    {
+        $container->set(
+            self::CLIENT_STORAGE,
+            fn (): StorageClientInterface => $container->getLocator()->storage()->client()
+        );
+    }
 }
